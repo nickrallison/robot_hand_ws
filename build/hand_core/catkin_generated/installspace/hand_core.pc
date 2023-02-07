@@ -1,0 +1,8 @@
+prefix=/home/nick/hand_ws/install
+
+Name: hand_core
+Description: Description of hand_core
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -1,0 +1,6 @@
+hand_core
+/home/nick/hand_ws/devel/.private/hand_core/cmake.lock /home/nick/hand_ws/devel/./cmake.lock
+/home/nick/hand_ws/devel/.private/hand_core/share/hand_core/cmake/hand_coreConfig-version.cmake /home/nick/hand_ws/devel/share/hand_core/cmake/hand_coreConfig-version.cmake
+/home/nick/hand_ws/devel/.private/hand_core/share/hand_core/cmake/hand_coreConfig.cmake /home/nick/hand_ws/devel/share/hand_core/cmake/hand_coreConfig.cmake
+/home/nick/hand_ws/devel/.private/hand_core/lib/pkgconfig/hand_core.pc /home/nick/hand_ws/devel/lib/pkgconfig/hand_core.pc
+/home/nick/hand_ws/devel/.private/hand_core/lib/hand_core/sign_controller /home/nick/hand_ws/devel/lib/hand_core/sign_controller

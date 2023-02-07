@@ -1,0 +1,4 @@
+Symlinking /home/nick/hand_ws/devel/share/hand_core/cmake/hand_coreConfig-version.cmake
+Symlinking /home/nick/hand_ws/devel/share/hand_core/cmake/hand_coreConfig.cmake
+Symlinking /home/nick/hand_ws/devel/lib/pkgconfig/hand_core.pc
+Symlinking /home/nick/hand_ws/devel/lib/hand_core/sign_controller

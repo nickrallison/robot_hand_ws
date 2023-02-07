@@ -1,0 +1,1 @@
+/home/nick/hand_ws/devel/.private/hand_core/share/hand_core/cmake/hand_coreConfig-version.cmake
