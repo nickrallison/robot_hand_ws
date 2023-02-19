@@ -1,19 +1,26 @@
 #include <ros/ros.h>
 #include <vector>
 #include <queue>
+#include <jsoncpp/json/json.h>
+#include <fstream>
+
+#include <ros/ros.h>
+#include <std_msgs/Float64.h>
+#include <std_msgs/String.h>
 
 class SignController
 {
     public:
         // Constructor
-        LegInverseKinematicsProcessor(const ros::NodeHandle &nh_private_);
+        SignController(const ros::NodeHandle &nh_private_);
 
         // Destructor
-        ~LegInverseKinematicsProcessor() = default;
+        ~SignController() = default;
 
         // Callback methods
-        void hand_update(const ros::TimerEvent& event)
+        void hand_update(const ros::TimerEvent& event);
         void hand_cb(const std_msgs::String::ConstPtr& Phrase);
+
 
         // Public Vars
         double operating_freq = 30;
@@ -32,7 +39,21 @@ class SignController
          * Messages
          */
 
-        std_msgs::Float64 superior_right_shoulder_msg;
+        std_msgs::Float64 thumb_flex_msg;
+        std_msgs::Float64 thumb_abd_msg;
+        std_msgs::Float64 index_flex_msg;
+        std_msgs::Float64 index_abd_msg;
+        std_msgs::Float64 middle_flex_msg;
+        std_msgs::Float64 middle_abd_msg;
+        std_msgs::Float64 ring_flex_msg;
+        std_msgs::Float64 ring_abd_msg;
+        std_msgs::Float64 pinky_flex_msg;
+        std_msgs::Float64 pinky_abd_msg;
+        std_msgs::Float64 wrist_flex_msg;
+        std_msgs::Float64 wrist_dev_msg;
+        std_msgs::Float64 wrist_rot_msg;
+
+        std_msgs::String debug_msg;
 
         /**
          * Publishers and subscribers
@@ -55,16 +76,21 @@ class SignController
         ros::Publisher wrist_dev_pub;
         ros::Publisher wrist_rot_pub;
 
+        /**
+         * Runtime Functions
+         */
+        void command_hand();
+        void hand_lerp();
         
-        
+
         
         /**
          * Runtime variables
          */
-        int pos_prev = 0;
-        int pos_next = 0;
+        std::string pos_prev = "none";
+        std::string pos_next = "none";
 
-        std::queue<int> position_queue;
+        std::queue<std::string> position_queue;
         double percent_complete;
         double velocity = 0.1; // signs / second
 
@@ -84,4 +110,9 @@ class SignController
         double wrist_dev =   0;
         double wrist_rot =   0;
 
+        Json::Value positions_map;
+
 };
+
+double lerp(double a, double b, double f);
+Json::Value read_from_json(std::string path_to_json);
