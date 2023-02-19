@@ -1,4 +1,0 @@
-[35m[1mScanning dependencies of target sign_controller[0m
-[ 50%] [32mBuilding CXX object CMakeFiles/sign_controller.dir/src/sign_controller.cpp.o[0m
-[100%] [32m[1mLinking CXX executable /home/nick/hand_ws/devel/.private/hand_core/lib/hand_core/sign_controller[0m
-[100%] Built target sign_controller
