@@ -38,9 +38,22 @@ class SignController
          * Publishers and subscribers
          */
         ros::Subscriber text_sub;
-        ros::Publisher  hand_pub;
-        ros::Publisher  percent_pub_pub;
+
         ros::Publisher  debug_pub;
+
+        ros::Publisher thumb_flex_pub;
+        ros::Publisher thumb_abd_pub;
+        ros::Publisher index_flex_pub;
+        ros::Publisher index_abd_pub;
+        ros::Publisher middle_flex_pub;
+        ros::Publisher middle_abd_pub;
+        ros::Publisher ring_flex_pub;
+        ros::Publisher ring_abd_pub;
+        ros::Publisher pinky_flex_pub;
+        ros::Publisher pinky_abd_pub;
+        ros::Publisher wrist_flex_pub;
+        ros::Publisher wrist_dev_pub;
+        ros::Publisher wrist_rot_pub;
 
         
         
