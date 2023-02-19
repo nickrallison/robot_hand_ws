@@ -1,6 +1,0 @@
-devel_space: /home/nick/hand_ws/devel
-install: false
-install_space: /home/nick/hand_ws/install
-profile: default
-source_space: /home/nick/hand_ws/src
-workspace: /home/nick/hand_ws
