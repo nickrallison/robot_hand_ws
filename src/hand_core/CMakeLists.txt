@@ -15,6 +15,8 @@ find_package(catkin REQUIRED COMPONENTS
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(JSONCPP jsoncpp)
 
 
 ## Uncomment this if the package has a setup.py. This macro ensures
@@ -106,7 +108,7 @@ catkin_package(
  #INCLUDE_DIRS include
  #LIBRARIES hand_core
  #CATKIN_DEPENDS roscpp rospy std_msgs
- #DEPENDS system_lib
+ #DEPENDS system_lib jsoncpp
 )
 
 ###########
@@ -116,8 +118,8 @@ catkin_package(
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 include_directories(
-# include
   ${catkin_INCLUDE_DIRS}
+  ${JSONCPP_INCLUDE_DIRS}
 )
 
 ## Declare a C++ library
@@ -133,9 +135,6 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-# add_executable(${PROJECT_NAME}_node src/hand_core_node.cpp)
-add_executable(sign_controller src/sign_controller.cpp)
-target_link_libraries(sign_controller ${catkin_LIBRARIES})
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -206,3 +205,9 @@ target_link_libraries(sign_controller ${catkin_LIBRARIES})
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+add_executable(sign_controller src/sign_controller.cpp src/sign_controller_node.cpp)
+target_link_libraries(sign_controller
+  ${catkin_LIBRARIES}
+  ${JSONCPP_LIBRARIES}
+)

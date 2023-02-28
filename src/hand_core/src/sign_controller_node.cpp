@@ -1,5 +1,5 @@
 #include <ros/ros.h>
-#include "../include/leg_inverse_kinematics.h"
+#include "../include/sign_controller.h"
 
 
 int main(int argc, char **argv)
@@ -8,7 +8,7 @@ int main(int argc, char **argv)
 
     ros::NodeHandle nh_private("~");
     //tf::TransformListener tf(ros::Duration(10));
-    SignController scSC = SignController(nh_private);
+    SignController sc = SignController(nh_private);
 
     ros::Timer timer = nh_private.createTimer(ros::Duration(1.0 / sc.operating_freq), &SignController::hand_update, &sc);
     
