@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<launch>
+    <rosparam command="load" file="$(find robot_core)/params/params.yaml" />
+
+    <include file="$(find robot_core)/launch/kinematics.launch"/>
+    <!--include file="$(find robot_core)/launch/sensors.launch"/-->
+</launch>
