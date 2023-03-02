@@ -18,19 +18,17 @@ SignController::SignController(const ros::NodeHandle &nh_private_) {
 
     debug_pub       = nh_.advertise<std_msgs::String>("/debug", 10);
 
-    thumb_flex_pub = nh_.advertise<std_msgs::Float64>("/command/pos", 10);
-    thumb_abd_pub = nh_.advertise<std_msgs::Float64>("/command/pos", 10);
-    index_flex_pub = nh_.advertise<std_msgs::Float64>("/command/pos", 10);
-    index_abd_pub = nh_.advertise<std_msgs::Float64>("/command/pos", 10);
-    middle_flex_pub = nh_.advertise<std_msgs::Float64>("/command/pos", 10);
-    middle_abd_pub = nh_.advertise<std_msgs::Float64>("/command/pos", 10);
-    ring_flex_pub = nh_.advertise<std_msgs::Float64>("/command/pos", 10);
-    ring_abd_pub = nh_.advertise<std_msgs::Float64>("/command/pos", 10);
-    pinky_flex_pub = nh_.advertise<std_msgs::Float64>("/command/pos", 10);
-    pinky_abd_pub = nh_.advertise<std_msgs::Float64>("/command/pos", 10);
-    wrist_flex_pub = nh_.advertise<std_msgs::Float64>("/command/pos", 10);
-    wrist_dev_pub = nh_.advertise<std_msgs::Float64>("/command/pos", 10);
-    wrist_rot_pub = nh_.advertise<std_msgs::Float64>("/command/pos", 10);
+    thumb_flex_pub = nh_.advertise<std_msgs::Float64>("/actuation/thumb/flex", 10);
+    thumb_abd_pub = nh_.advertise<std_msgs::Float64>("/actuation/thumb/abd", 10);
+    index_flex_pub = nh_.advertise<std_msgs::Float64>("/actuation/index/flex", 10);
+    index_abd_pub = nh_.advertise<std_msgs::Float64>("/actuation/index/abd", 10);
+    middle_flex_pub = nh_.advertise<std_msgs::Float64>("/actuation/middle/flex", 10);
+    middle_abd_pub = nh_.advertise<std_msgs::Float64>("/actuation/middle/abd", 10);
+    ring_flex_pub = nh_.advertise<std_msgs::Float64>("/actuation/ring/flex", 10);
+    ring_abd_pub = nh_.advertise<std_msgs::Float64>("/actuation/ring/abd", 10);
+    pinky_flex_pub = nh_.advertise<std_msgs::Float64>("/actuation/pinky/flex", 10);
+    pinky_abd_pub = nh_.advertise<std_msgs::Float64>("/actuation/pinky/abd", 10);
+    wrist_flex_pub = nh_.advertise<std_msgs::Float64>("/actuation/wrist/flex", 10);
 
     position_queue = {};
     percent_complete = 0;
@@ -53,19 +51,17 @@ void SignController::hand_update(const ros::TimerEvent& event) {
 }
 
 void SignController::hand_lerp() {
-    thumb_flex_msg.data = lerp(positions_map[pos_prev]["thumb_flex"].asDouble(), positions_map[pos_next]["thumb_flex"].asDouble(), percent_complete);
-    thumb_abd_msg.data = lerp(positions_map[pos_prev]["thumb_abd"].asDouble(), positions_map[pos_next]["thumb_abd"].asDouble(), percent_complete);
-    index_flex_msg.data = lerp(positions_map[pos_prev]["index_flex"].asDouble(), positions_map[pos_next]["index_flex"].asDouble(), percent_complete);
-    index_abd_msg.data = lerp(positions_map[pos_prev]["index_abd"].asDouble(), positions_map[pos_next]["index_abd"].asDouble(), percent_complete);
+    thumb_flex_msg.data  = lerp(positions_map[pos_prev]["thumb_flex"].asDouble(),  positions_map[pos_next]["thumb_flex"].asDouble(),  percent_complete);
+    thumb_abd_msg.data   = lerp(positions_map[pos_prev]["thumb_abd"].asDouble(),   positions_map[pos_next]["thumb_abd"].asDouble(),   percent_complete);
+    index_flex_msg.data  = lerp(positions_map[pos_prev]["index_flex"].asDouble(),  positions_map[pos_next]["index_flex"].asDouble(),  percent_complete);
+    index_abd_msg.data   = lerp(positions_map[pos_prev]["index_abd"].asDouble(),   positions_map[pos_next]["index_abd"].asDouble(),   percent_complete);
     middle_flex_msg.data = lerp(positions_map[pos_prev]["middle_flex"].asDouble(), positions_map[pos_next]["middle_flex"].asDouble(), percent_complete);
-    middle_abd_msg.data = lerp(positions_map[pos_prev]["middle_abd"].asDouble(), positions_map[pos_next]["middle_abd"].asDouble(), percent_complete);
-    ring_flex_msg.data = lerp(positions_map[pos_prev]["ring_flex"].asDouble(), positions_map[pos_next]["ring_flex"].asDouble(), percent_complete);
-    ring_abd_msg.data = lerp(positions_map[pos_prev]["ring_abd"].asDouble(), positions_map[pos_next]["ring_abd"].asDouble(), percent_complete);
-    pinky_flex_msg.data = lerp(positions_map[pos_prev]["pinky_flex"].asDouble(), positions_map[pos_next]["pinky_flex"].asDouble(), percent_complete);
-    pinky_abd_msg.data = lerp(positions_map[pos_prev]["pinky_abd"].asDouble(), positions_map[pos_next]["pinky_abd"].asDouble(), percent_complete);
-    wrist_flex_msg.data = lerp(positions_map[pos_prev]["wrist_flex"].asDouble(), positions_map[pos_next]["wrist_flex"].asDouble(), percent_complete);
-    wrist_dev_msg.data = lerp(positions_map[pos_prev]["wrist_dev"].asDouble(), positions_map[pos_next]["wrist_dev"].asDouble(), percent_complete);
-    wrist_rot_msg.data = lerp(positions_map[pos_prev]["wrist_rot"].asDouble(), positions_map[pos_next]["wrist_rot"].asDouble(), percent_complete);
+    middle_abd_msg.data  = lerp(positions_map[pos_prev]["middle_abd"].asDouble(),  positions_map[pos_next]["middle_abd"].asDouble(),  percent_complete);
+    ring_flex_msg.data   = lerp(positions_map[pos_prev]["ring_flex"].asDouble(),   positions_map[pos_next]["ring_flex"].asDouble(),   percent_complete);
+    ring_abd_msg.data    = lerp(positions_map[pos_prev]["ring_abd"].asDouble(),    positions_map[pos_next]["ring_abd"].asDouble(),    percent_complete);
+    pinky_flex_msg.data  = lerp(positions_map[pos_prev]["pinky_flex"].asDouble(),  positions_map[pos_next]["pinky_flex"].asDouble(),  percent_complete);
+    pinky_abd_msg.data   = lerp(positions_map[pos_prev]["pinky_abd"].asDouble(),   positions_map[pos_next]["pinky_abd"].asDouble(),   percent_complete);
+    wrist_flex_msg.data  = lerp(positions_map[pos_prev]["wrist_flex"].asDouble(),  positions_map[pos_next]["wrist_flex"].asDouble(),  percent_complete);
 }
 
 
@@ -81,8 +77,6 @@ void SignController::command_hand() {
     pinky_flex_pub.publish(pinky_flex_msg);
     pinky_abd_pub.publish(pinky_abd_msg);
     wrist_flex_pub.publish(wrist_flex_msg);
-    wrist_dev_pub.publish(wrist_dev_msg);
-    wrist_rot_pub.publish(wrist_rot_msg);
 }
 
 
