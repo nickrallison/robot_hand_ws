@@ -18,14 +18,8 @@ class SignController
         ~SignController() = default;
 
         // Callback methods
-        void hand_update(const ros::TimerEvent& event);
         void hand_cb(const std_msgs::String::ConstPtr& Phrase);
-
-
-        // Public Vars
-        double operating_freq = 30;
-
-
+        void percent_cb(const std_msgs::Float64::ConstPtr& percent);
 
     private:
         /**
@@ -53,12 +47,15 @@ class SignController
         std_msgs::Float64 wrist_dev_msg;
         std_msgs::Float64 wrist_rot_msg;
 
+        std_msgs::Float64 percent_msg;
+
         std_msgs::String debug_msg;
 
         /**
          * Publishers and subscribers
          */
         ros::Subscriber text_sub;
+        ros::Subscriber percent_sub;
 
         ros::Publisher  debug_pub;
 
@@ -80,39 +77,20 @@ class SignController
          * Runtime Functions
          */
         void command_hand();
-        void hand_lerp();
+        void get_msgs();
         
 
         
         /**
          * Runtime variables
          */
-        std::string pos_prev = "none";
-        std::string pos_next = "none";
+        std::string pos_prev = "0";
+        std::string pos_next = "0";
 
         std::queue<std::string> position_queue;
-        double percent_complete;
-        double velocity = 0.1; // signs / second
 
         double margin;
 
-        double thumb_flex =  0;
-        double thumb_abd =   0;
-        double index_flex =  0;
-        double index_abd =   0;
-        double middle_flex = 0;
-        double middle_abd =  0;
-        double ring_flex =   0;
-        double ring_abd =    0;
-        double pinky_flex =  0;
-        double pinky_abd =   0;
-        double wrist_flex =  0;
-        double wrist_dev =   0;
-        double wrist_rot =   0;
-
-        Json::Value positions_map;
+        std::map<std::string, std::map<std::string, double>> json_out;
 
 };
-
-double lerp(double a, double b, double f);
-Json::Value read_from_json(std::string path_to_json);

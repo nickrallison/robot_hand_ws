@@ -2,7 +2,7 @@
 <launch>
     <!--Teensy Interface-->
     <node pkg="rosserial_python" type="serial_node.py" name="ESP32_interface"
-          args="_port:=/dev/ttyUSB0 _baud:=115200"
+          args="_port:=/dev/ttyUSB0 _baud:=9600"
           respawn="true"/>
     <!--OR args="_port:=/dev/ttyACM1"-->
 
