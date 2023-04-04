@@ -30,8 +30,6 @@ SignController::SignController(const ros::NodeHandle &nh_private_) {
     pinky_flex_pub = nh_.advertise<std_msgs::Float64>("/actuation/pinky/flex", 10);
     pinky_abd_pub = nh_.advertise<std_msgs::Float64>("/actuation/pinky/abd", 10);
     wrist_flex_pub = nh_.advertise<std_msgs::Float64>("/actuation/wrist/flex", 10);
-    //wrist_dev_pub = nh_.advertise<std_msgs::Float64>("/actuation/index/flex", 10);
-    //wrist_rot_pub = nh_.advertise<std_msgs::Float64>("/actuation/index/flex", 10);
 
     position_queue = {};
 
@@ -65,8 +63,6 @@ void SignController::command_hand() {
     pinky_flex_pub.publish(pinky_flex_msg);
     pinky_abd_pub.publish(pinky_abd_msg);
     wrist_flex_pub.publish(wrist_flex_msg);
-    //wrist_dev_pub.publish(wrist_dev_msg);
-    //wrist_rot_pub.publish(wrist_rot_msg);
 }
 
 
