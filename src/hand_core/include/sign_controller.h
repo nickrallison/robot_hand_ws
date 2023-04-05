@@ -19,7 +19,7 @@ class SignController
 
         // Callback methods
         void hand_cb(const std_msgs::String::ConstPtr& Phrase);
-        void percent_cb(const std_msgs::Float64::ConstPtr& percent);
+        void next_sign(const ros::TimerEvent& event);
 
     private:
         /**
@@ -90,6 +90,7 @@ class SignController
         std::queue<std::string> position_queue;
 
         double margin;
+        double period;
 
         std::map<std::string, std::map<std::string, double>> json_out;
 

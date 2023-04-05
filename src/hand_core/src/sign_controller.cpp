@@ -16,7 +16,7 @@
 
 SignController::SignController(const ros::NodeHandle &nh_private_) {
     text_sub        = nh_.subscribe<std_msgs::String>("/input/text", 10, &SignController::hand_cb, this);
-    percent_sub        = nh_.subscribe<std_msgs::Float64>("/percent", 10, &SignController::percent_cb, this);
+    //percent_sub        = nh_.subscribe<std_msgs::Float64>("/percent", 10, &SignController::percent_cb, this);
     debug_pub       = nh_.advertise<std_msgs::String>("/debug", 10);
 
     thumb_flex_pub = nh_.advertise<std_msgs::Float64>("/actuation/thumb/flex", 10);
@@ -34,6 +34,7 @@ SignController::SignController(const ros::NodeHandle &nh_private_) {
     position_queue = {};
 
     margin = 0.99;
+    period = 2;
 
     //positions_map = read_from_json();
     json_out = json_fake_func();
@@ -82,16 +83,10 @@ void SignController::hand_cb(const std_msgs::String::ConstPtr& Phrase) {
     command_hand();
 }
 
-void SignController::percent_cb(const std_msgs::Float64::ConstPtr& percent) {
-    if (percent->data > margin && !position_queue.empty()) {
+void SignController::next_sign(const ros::TimerEvent& event) {
+    if (!position_queue.empty()) {
         pos_next = position_queue.front();
         position_queue.pop();
-        debug_msg.data = pos_next;
-        debug_pub.publish(debug_msg);
-        command_hand();
-    }
-    if (percent->data > margin && position_queue.empty()) {
-        pos_next = "0";
         debug_msg.data = pos_next;
         debug_pub.publish(debug_msg);
         command_hand();
