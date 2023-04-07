@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <launch>
     <!--rosparam command="load" file="$(find hand_core)/params/params.yaml" /-->
-    <include file="$(find hand_core)/launch/kinematics.launch"/>
+    <!-- <include file="$(find hand_core)/launch/kinematics.launch"/> -->
+    <node pkg="hand_core" type="file_read.py" name="file_reader"/>
+    <!-- <node pkg="hand_core" type="file_delete.py" name="file_deleter"/> -->
 </launch>

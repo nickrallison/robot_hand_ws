@@ -3,10 +3,12 @@
 #include <string>
 #include <jsoncpp/json/json.h>
 #include <fstream>
+#include <cstdio>
 
 #include <ros/ros.h>
 #include <std_msgs/Float64.h>
 #include <std_msgs/String.h>
+#include <std_msgs/Bool.h>
 
 
 #include "../include/sign_controller.h"
@@ -18,6 +20,7 @@ SignController::SignController(const ros::NodeHandle &nh_private_) {
     text_sub        = nh_.subscribe<std_msgs::String>("/input/text", 10, &SignController::hand_cb, this);
     //percent_sub        = nh_.subscribe<std_msgs::Float64>("/percent", 10, &SignController::percent_cb, this);
     debug_pub       = nh_.advertise<std_msgs::String>("/debug", 10);
+    clear_pub       = nh_.advertise<std_msgs::Bool>("/output/clear", 10);
 
     thumb_flex_pub = nh_.advertise<std_msgs::Float64>("/actuation/thumb/flex", 10);
     thumb_abd_pub = nh_.advertise<std_msgs::Float64>("/actuation/thumb/abd", 10);
@@ -35,6 +38,7 @@ SignController::SignController(const ros::NodeHandle &nh_private_) {
 
     margin = 0.99;
     period = 2;
+    started = false;
 
     //positions_map = read_from_json();
     json_out = json_fake_func();
@@ -81,6 +85,7 @@ void SignController::hand_cb(const std_msgs::String::ConstPtr& Phrase) {
     debug_msg.data = pos_next;
     debug_pub.publish(debug_msg);
     command_hand();
+    started = true;
 }
 
 void SignController::next_sign(const ros::TimerEvent& event) {

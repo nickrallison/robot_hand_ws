@@ -7,6 +7,7 @@
 #include <ros/ros.h>
 #include <std_msgs/Float64.h>
 #include <std_msgs/String.h>
+#include <std_msgs/Bool.h>
 
 class SignController
 {
@@ -20,6 +21,7 @@ class SignController
         // Callback methods
         void hand_cb(const std_msgs::String::ConstPtr& Phrase);
         void next_sign(const ros::TimerEvent& event);
+        double period;
 
     private:
         /**
@@ -50,6 +52,7 @@ class SignController
         std_msgs::Float64 percent_msg;
 
         std_msgs::String debug_msg;
+        std_msgs::Bool clear_msg;
 
         /**
          * Publishers and subscribers
@@ -58,6 +61,7 @@ class SignController
         ros::Subscriber percent_sub;
 
         ros::Publisher  debug_pub;
+        ros::Publisher  clear_pub;
 
         ros::Publisher thumb_flex_pub;
         ros::Publisher thumb_abd_pub;
@@ -90,7 +94,7 @@ class SignController
         std::queue<std::string> position_queue;
 
         double margin;
-        double period;
+        bool started;
 
         std::map<std::string, std::map<std::string, double>> json_out;
 
