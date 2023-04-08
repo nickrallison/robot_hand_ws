@@ -41,7 +41,7 @@ std::map<std::string, std::map<std::string, double>> json_fake_func() {
     json_fake["b"]["wrist_flex"] = 0;
 
     json_fake["c"]["thumb_flex"] = 0.5;
-    json_fake["c"]["thumb_abd"] = 0;
+    json_fake["c"]["thumb_abd"] = 1;
     json_fake["c"]["index_flex"] = 0.5;
     json_fake["c"]["index_abd"] = 0;
     json_fake["c"]["middle_flex"] = 0.5;
@@ -52,27 +52,27 @@ std::map<std::string, std::map<std::string, double>> json_fake_func() {
     json_fake["c"]["pinky_abd"] = 0;
     json_fake["c"]["wrist_flex"] = 0;
 
-    json_fake["d"]["thumb_flex"] = 0.5;
-    json_fake["d"]["thumb_abd"] = 0;
-    json_fake["d"]["index_flex"] = 0;
+    json_fake["d"]["thumb_flex"] = 0.3;
+    json_fake["d"]["thumb_abd"] = 1;
+    json_fake["d"]["index_flex"] = 1;
     json_fake["d"]["index_abd"] = 0;
-    json_fake["d"]["middle_flex"] = 0.5;
+    json_fake["d"]["middle_flex"] = 0;
     json_fake["d"]["middle_abd"] = 0;
-    json_fake["d"]["ring_flex"] = 0.5;
+    json_fake["d"]["ring_flex"] = 0;
     json_fake["d"]["ring_abd"] = 0;
-    json_fake["d"]["pinky_flex"] = 0.5;
+    json_fake["d"]["pinky_flex"] = 0;
     json_fake["d"]["pinky_abd"] = 0;
     json_fake["d"]["wrist_flex"] = 0;
 
-    json_fake["e"]["thumb_flex"] = 0.5;
-    json_fake["e"]["thumb_abd"] = 0;
-    json_fake["e"]["index_flex"] = 0.7;
+    json_fake["e"]["thumb_flex"] = 0;
+    json_fake["e"]["thumb_abd"] = -0.7;
+    json_fake["e"]["index_flex"] = 0.3;
     json_fake["e"]["index_abd"] = 0;
-    json_fake["e"]["middle_flex"] = 0.7;
+    json_fake["e"]["middle_flex"] = 0.3;
     json_fake["e"]["middle_abd"] = 0;
-    json_fake["e"]["ring_flex"] = 0.7;
+    json_fake["e"]["ring_flex"] = 0.3;
     json_fake["e"]["ring_abd"] = 0;
-    json_fake["e"]["pinky_flex"] = 0.7;
+    json_fake["e"]["pinky_flex"] = 0.3;
     json_fake["e"]["pinky_abd"] = 0;
     json_fake["e"]["wrist_flex"] = 0;
 
