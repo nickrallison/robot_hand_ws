@@ -280,39 +280,39 @@ std::map<std::string, std::map<std::string, double>> json_fake_func() {
     json_fake["v"]["pinky_abd"] = 0;
     json_fake["v"]["wrist_flex"] = 0;
 
-    json_fake["w"]["thumb_flex"] = 0.5;
-    json_fake["w"]["thumb_abd"] = 0;
-    json_fake["w"]["index_flex"] = 0;
+    json_fake["w"]["thumb_flex"] = 0.2;
+    json_fake["w"]["thumb_abd"] = 1;
+    json_fake["w"]["index_flex"] = 1;
     json_fake["w"]["index_abd"] = 0;
-    json_fake["w"]["middle_flex"] = 0;
+    json_fake["w"]["middle_flex"] = 1;
     json_fake["w"]["middle_abd"] = 0;
-    json_fake["w"]["ring_flex"] = 0;
+    json_fake["w"]["ring_flex"] = 1;
     json_fake["w"]["ring_abd"] = 0;
-    json_fake["w"]["pinky_flex"] = 0.3;
+    json_fake["w"]["pinky_flex"] = 0;
     json_fake["w"]["pinky_abd"] = 0;
     json_fake["w"]["wrist_flex"] = 0;
 
     json_fake["x"]["thumb_flex"] = 1;
     json_fake["x"]["thumb_abd"] = 0;
-    json_fake["x"]["index_flex"] = 0.0;
+    json_fake["x"]["index_flex"] = 1;
     json_fake["x"]["index_abd"] = 0;
-    json_fake["x"]["middle_flex"] = 1;
+    json_fake["x"]["middle_flex"] = 0;
     json_fake["x"]["middle_abd"] = 0;
-    json_fake["x"]["ring_flex"] = 1;
+    json_fake["x"]["ring_flex"] = 0;
     json_fake["x"]["ring_abd"] = 0;
-    json_fake["x"]["pinky_flex"] = 1;
+    json_fake["x"]["pinky_flex"] = 0;
     json_fake["x"]["pinky_abd"] = 0;
     json_fake["x"]["wrist_flex"] = 0;
 
-    json_fake["y"]["thumb_flex"] = 0;
-    json_fake["y"]["thumb_abd"] = 0;
-    json_fake["y"]["index_flex"] = 1;
+    json_fake["y"]["thumb_flex"] = 1;
+    json_fake["y"]["thumb_abd"] = -0.9;
+    json_fake["y"]["index_flex"] = 0;
     json_fake["y"]["index_abd"] = 0;
-    json_fake["y"]["middle_flex"] = 1;
+    json_fake["y"]["middle_flex"] = 0;
     json_fake["y"]["middle_abd"] = 0;
-    json_fake["y"]["ring_flex"] = 1;
+    json_fake["y"]["ring_flex"] = 0;
     json_fake["y"]["ring_abd"] = 0;
-    json_fake["y"]["pinky_flex"] = 0;
+    json_fake["y"]["pinky_flex"] = 1;
     json_fake["y"]["pinky_abd"] = 0;
     json_fake["y"]["wrist_flex"] = 0;
 
