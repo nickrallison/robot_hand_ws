@@ -91,6 +91,8 @@ void SignController::hand_cb(const std_msgs::String::ConstPtr& Phrase) {
     debug_msg.data = Phrase->data;
     std::string msg = Phrase->data;
     //debug_pub.publish(debug_msg);
+    std::string z(1, '0');
+    position_queue.push(z);
     for (char chr : msg) {
         std::string s(1, chr);
         std::string z(1, '0');
