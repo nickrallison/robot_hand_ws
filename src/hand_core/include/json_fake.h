@@ -16,27 +16,27 @@ std::map<std::string, std::map<std::string, double>> json_fake_func() {
     json_fake["0"]["pinky_abd"] = 0;
     json_fake["0"]["wrist_flex"] = 0;
 
-    json_fake["a"]["thumb_flex"] = 1;
-    json_fake["a"]["thumb_abd"] = 0;
-    json_fake["a"]["index_flex"] = 1;
+    json_fake["a"]["thumb_flex"] = 0;
+    json_fake["a"]["thumb_abd"] = -0.9;
+    json_fake["a"]["index_flex"] = 0;
     json_fake["a"]["index_abd"] = 0;
-    json_fake["a"]["middle_flex"] = 1;
+    json_fake["a"]["middle_flex"] = 0;
     json_fake["a"]["middle_abd"] = 0;
-    json_fake["a"]["ring_flex"] = 1;
+    json_fake["a"]["ring_flex"] = 0;
     json_fake["a"]["ring_abd"] = 0;
-    json_fake["a"]["pinky_flex"] = 1;
+    json_fake["a"]["pinky_flex"] = 0;
     json_fake["a"]["pinky_abd"] = 0;
     json_fake["a"]["wrist_flex"] = 0;
 
-    json_fake["b"]["thumb_flex"] = 0.5;
+    json_fake["b"]["thumb_flex"] = 0;
     json_fake["b"]["thumb_abd"] = 0;
-    json_fake["b"]["index_flex"] = 0;
+    json_fake["b"]["index_flex"] = 1;
     json_fake["b"]["index_abd"] = 0;
-    json_fake["b"]["middle_flex"] = 0;
+    json_fake["b"]["middle_flex"] = 1;
     json_fake["b"]["middle_abd"] = 0;
-    json_fake["b"]["ring_flex"] = 0;
+    json_fake["b"]["ring_flex"] = 1;
     json_fake["b"]["ring_abd"] = 0;
-    json_fake["b"]["pinky_flex"] = 0;
+    json_fake["b"]["pinky_flex"] = 1;
     json_fake["b"]["pinky_abd"] = 0;
     json_fake["b"]["wrist_flex"] = 0;
 

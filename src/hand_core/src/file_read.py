@@ -12,7 +12,7 @@ from std_msgs.msg import String
 
 rospy.init_node('file_reader_node', anonymous=True)
 pub = rospy.Publisher(topic, String, queue_size=10)
-period = 3
+period = 10
 rate = rospy.Rate(1.0 / period)
 
 def read_publish_delete_file(file_path):
