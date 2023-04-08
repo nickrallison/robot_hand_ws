@@ -4,6 +4,8 @@
 #include <jsoncpp/json/json.h>
 #include <fstream>
 #include <cstdio>
+#include <chrono>
+#include <thread>
 
 #include <ros/ros.h>
 #include <std_msgs/Float64.h>
@@ -37,7 +39,7 @@ SignController::SignController(const ros::NodeHandle &nh_private_) {
     position_queue = {};
 
     margin = 0.99;
-    period = 2;
+    period = 3;
     started = false;
 
     //positions_map = read_from_json();
@@ -45,6 +47,9 @@ SignController::SignController(const ros::NodeHandle &nh_private_) {
 }
 
 void SignController::command_hand() {
+    using namespace std::this_thread; // sleep_for, sleep_until
+    using namespace std::chrono; // nanoseconds, system_clock, seconds
+
     thumb_flex_msg.data = json_out[pos_next]["thumb_flex"];
     thumb_abd_msg.data = json_out[pos_next]["thumb_abd"];
     index_flex_msg.data = json_out[pos_next]["index_flex"];
@@ -58,16 +63,27 @@ void SignController::command_hand() {
     wrist_flex_msg.data = json_out[pos_next]["wrist_flex"];
 
     thumb_flex_pub.publish(thumb_flex_msg);
+    sleep_for(milliseconds(5));
     thumb_abd_pub.publish(thumb_abd_msg);
+    sleep_for(milliseconds(5));
     index_flex_pub.publish(index_flex_msg);
+    sleep_for(milliseconds(5));
     index_abd_pub.publish(index_abd_msg);
+    sleep_for(milliseconds(5));
     middle_flex_pub.publish(middle_flex_msg);
+    sleep_for(milliseconds(5));
     middle_abd_pub.publish(middle_abd_msg);
+    sleep_for(milliseconds(5));
     ring_flex_pub.publish(ring_flex_msg);
+    sleep_for(milliseconds(5));
     ring_abd_pub.publish(ring_abd_msg);
+    sleep_for(milliseconds(5));
     pinky_flex_pub.publish(pinky_flex_msg);
+    sleep_for(milliseconds(5));
     pinky_abd_pub.publish(pinky_abd_msg);
+    sleep_for(milliseconds(5));
     wrist_flex_pub.publish(wrist_flex_msg);
+    sleep_for(milliseconds(5));
 }
 
 
@@ -77,8 +93,9 @@ void SignController::hand_cb(const std_msgs::String::ConstPtr& Phrase) {
     //debug_pub.publish(debug_msg);
     for (char chr : msg) {
         std::string s(1, chr);
+        std::string z(1, '0');
         position_queue.push(s);
-        
+        position_queue.push(z);
     }
     pos_next = position_queue.front();
     position_queue.pop();
