@@ -3,7 +3,7 @@ import rospy
 import time
 from std_msgs.msg import String, Bool
 
-file_path = '/home/nick/hand_ws/src/hand_core/src/test.txt'  # Replace with your file path
+file_path = '/home/nick/hand_ws/src/hand_core/model/nlp_out.txt'  # Replace with your file path
 topic = '/input/text'  # Replace with your desired ROS topic name
 
 import os

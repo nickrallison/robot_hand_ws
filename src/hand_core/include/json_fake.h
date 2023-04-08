@@ -16,6 +16,18 @@ std::map<std::string, std::map<std::string, double>> json_fake_func() {
     json_fake["0"]["pinky_abd"] = 0;
     json_fake["0"]["wrist_flex"] = 0;
 
+    json_fake["\n"]["thumb_flex"] = 1;
+    json_fake["\n"]["thumb_abd"] = 0;
+    json_fake["\n"]["index_flex"] = 1;
+    json_fake["\n"]["index_abd"] = 0;
+    json_fake["\n"]["middle_flex"] = 1;
+    json_fake["\n"]["middle_abd"] = 0;
+    json_fake["\n"]["ring_flex"] = 1;
+    json_fake["\n"]["ring_abd"] = 0;
+    json_fake["\n"]["pinky_flex"] = 1;
+    json_fake["\n"]["pinky_abd"] = 0;
+    json_fake["\n"]["wrist_flex"] = 0;
+
     json_fake[" "]["thumb_flex"] = 1;
     json_fake[" "]["thumb_abd"] = 0;
     json_fake[" "]["index_flex"] = 1;
