@@ -39,7 +39,7 @@ SignController::SignController(const ros::NodeHandle &nh_private_) {
     position_queue = {};
 
     margin = 0.99;
-    period = 2;
+    period = 1.3;
     started = false;
 
     //positions_map = read_from_json();
