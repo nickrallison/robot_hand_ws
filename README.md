@@ -4,7 +4,7 @@
 <img alt="JPG" src="https://github.com/nickrallison/robot_hand_ws/blob/master/assets/group_photo.jpg" />
 
 ## If you want to see the firmware, you can find it here:
-[https://github.com/nickrallison/robot_hand_firmware](Firmware Repo)
+<a href="https://github.com/nickrallison/robot_hand_firmware">Firmware Repo</a>
 
 ## Here is a demonstration 
  <video width="320" height="240" controls>
