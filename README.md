@@ -1,8 +1,13 @@
 # Robot Hand
 
-### Hi, We are the group behind Helping Hands 👋
+## Hi, We are the group behind Helping Hands 👋
 <img alt="JPG" src="https://github.com/nickrallison/robot_hand_ws/blob/master/assets/group_photo.jpg" />
-- ⚡ Currently on intership at Qualcomm as an SoC design intern 
-- 🎓 Studying <a href="https://schulich.ucalgary.ca/electrical-software/">Electrical Enginneering</a> & <a href="https://science.ucalgary.ca/computer-science">Computer Science</a> at the University of Calgary
-- 🔧 Completed an internship at <a href="https://www.maparobo.com">Maparobo Inc.</a>, developing an autonomous landscaping robot.
-- 🤖 Programmed a robot so it does something like this 👉👉
+
+## If you want to see the firmware, you can find it here:
+[https://github.com/nickrallison/robot_hand_firmware](Firmware Repo)
+
+## Here is a demonstration 
+ <video width="320" height="240" controls>
+  <source src="https://github.com/nickrallison/robot_hand_ws/blob/master/assets/group_photo.jpg" type="video/mp4">
+our browser does not support the video tag.
+</video> 
