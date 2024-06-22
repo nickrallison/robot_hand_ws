@@ -8,6 +8,6 @@
 
 ## Here is a demonstration 
  <video width="320" height="240" controls>
-  <source src="https://github.com/nickrallison/robot_hand_ws/blob/master/assets/group_photo.jpg" type="video/mp4">
+  <source src="https://github.com/nickrallison/robot_hand_ws/blob/master/assets/demo.mp4" type="video/mp4">
 our browser does not support the video tag.
 </video> 
