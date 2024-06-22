@@ -7,7 +7,6 @@
 <a href="https://github.com/nickrallison/robot_hand_firmware">Firmware Repo</a>
 
 ## Here is a demonstration 
- <video width="320" height="240" controls>
-  <source src="https://github.com/nickrallison/robot_hand_ws/blob/master/assets/demo.mp4" type="video/mp4">
-our browser does not support the video tag.
-</video> 
+https://github.com/nickrallison/robot_hand_ws/assets/99363282/b7746373-382f-4b43-bd0f-a7095f1dee51
+
+
